@@ -3,11 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>voidultr4</title>
+    <title>voidultr4 | Developer Portfolio</title>
     <meta
       name="description"
-      content="voidultr4's portfolio, projects, live Discord card, and contact links."
+      content="voidultr4's dark void-blue developer portfolio with projects, live Discord presence, and contact links."
     />
+    <meta name="theme-color" content="#07111f" />
+    <meta property="og:title" content="voidultr4 | Developer Portfolio" />
+    <meta
+      property="og:description"
+      content="Projects, links, live Discord presence, and experiments by voidultr4."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://voidultr4.github.io/" />
+    <meta property="og:image" content="https://github.com/voidultr4.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,94 +26,136 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="void-grid" aria-hidden="true"></div>
+    <div class="orbital-glow glow-one" aria-hidden="true"></div>
+    <div class="orbital-glow glow-two" aria-hidden="true"></div>
+
     <div class="site-shell">
       <header class="site-header">
         <a class="brand" href="#top" aria-label="voidultr4 home">
           <span class="brand-mark"></span>
           <span>voidultr4</span>
         </a>
-        <nav class="nav-links" aria-label="Primary navigation">
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
+          <span class="sr-only">Toggle navigation</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav-links" id="primaryNav" aria-label="Primary navigation">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
+          <a href="#discord">Discord</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
 
       <main id="top">
         <section class="profile-hero" aria-labelledby="hero-title">
-          <div class="profile-card">
-            <div class="avatar-ring">
-              <img src="https://github.com/voidultr4.png" alt="voidultr4 GitHub avatar" />
+          <div class="hero-copy">
+            <div class="profile-chip">
+              <span class="pulse-pixel"></span>
+              <span>void://portfolio.online</span>
             </div>
-            <p class="console-line">void://portfolio</p>
-            <h1 id="hero-title">Hi, I'm voidultr4.</h1>
+            <h1 id="hero-title">Building small things with a dark-blue signal.</h1>
             <p class="hero-subtitle">developer • maker • project builder</p>
             <p class="hero-text">
-              I build web projects, experiments, and tools. This is my hub for projects,
-              links, contact, and live Discord presence.
+              I build web projects, experiments, and practical tools. This is my compact hub
+              for projects, links, contact, and a live Discord profile widget.
             </p>
             <div class="hero-actions" aria-label="Main actions">
-              <a class="button primary" href="https://github.com/voidultr4" target="_blank" rel="noreferrer">
+              <a class="button primary" href="#projects">View Projects</a>
+              <a class="button" href="https://github.com/voidultr4" target="_blank" rel="noreferrer">
                 GitHub
               </a>
-              <a class="button" href="#discord">Discord</a>
-              <a class="button" href="#contact">Contact</a>
+              <a class="button ghost" href="#contact">Contact</a>
             </div>
           </div>
 
-          <aside class="discord-card" id="discord" aria-labelledby="discord-title">
-            <div class="discord-avatar-wrap">
-              <img id="discordAvatar" src="https://github.com/voidultr4.png" alt="Discord avatar" />
-              <span class="presence-dot offline" id="presenceDot"></span>
-            </div>
-            <div class="discord-info">
-              <p class="section-kicker">Live Discord API</p>
-              <h2 id="discord-title">voidultr4</h2>
+          <div class="identity-stack">
+            <article class="profile-card" aria-label="voidultr4 profile">
+              <div class="avatar-ring">
+                <img src="https://github.com/voidultr4.png" alt="voidultr4 GitHub avatar" />
+              </div>
+              <div>
+                <p class="console-line">root@voidultr4</p>
+                <h2>Hi, I'm voidultr4.</h2>
+                <p>Cyber-blue portfolio space for code, projects, and things worth shipping.</p>
+              </div>
+              <div class="stat-row" aria-label="Profile highlights">
+                <span><strong>01</strong> portfolio</span>
+                <span><strong>24/7</strong> web hub</span>
+                <span><strong>∞</strong> experiments</span>
+              </div>
+            </article>
+
+            <aside class="discord-card" id="discord" aria-labelledby="discord-title">
+              <div class="discord-topline">
+                <p class="section-kicker">Live Discord Widget</p>
+                <span class="sync-state" id="syncState">syncing</span>
+              </div>
+              <div class="discord-profile">
+                <div class="discord-avatar-wrap">
+                  <img id="discordAvatar" src="https://github.com/voidultr4.png" alt="Discord avatar" />
+                  <span class="presence-dot offline" id="presenceDot"></span>
+                </div>
+                <div class="discord-info">
+                  <h2 id="discord-title">voidultr4</h2>
+                  <p id="discordUsername">@fakesanta</p>
+                </div>
+              </div>
               <dl class="discord-fields">
                 <div>
-                  <dt>username:</dt>
-                  <dd id="discordUsername">@fakesanta</dd>
+                  <dt>status</dt>
+                  <dd id="discordStatus">connecting...</dd>
                 </div>
                 <div>
-                  <dt>status:</dt>
-                  <dd id="discordStatus">add your Discord user ID</dd>
+                  <dt>activity</dt>
+                  <dd id="discordActivity">checking signal</dd>
                 </div>
                 <div>
-                  <dt>activity:</dt>
-                  <dd id="discordActivity">waiting for setup</dd>
+                  <dt>updated</dt>
+                  <dd id="discordUpdated">waiting</dd>
                 </div>
                 <div>
-                  <dt>updated:</dt>
-                  <dd id="discordUpdated">not connected yet</dd>
-                </div>
-                <div>
-                  <dt>Local time:</dt>
+                  <dt>local time</dt>
                   <dd id="localTime">--:--</dd>
                 </div>
               </dl>
-            </div>
-          </aside>
+            </aside>
+          </div>
         </section>
 
         <section class="panel about-panel" id="about" aria-labelledby="about-title">
-          <p class="section-kicker">About</p>
-          <h2 id="about-title">I like making useful things that are easy to open and share.</h2>
-          <p>
-            This site is for my portfolio, project links, Discord, email, and a browser-based
-            live Discord presence card. The theme is inspired by compact developer portfolios, but tuned
-            with my own darker void-blue style.
-          </p>
+          <div class="panel-grid">
+            <div>
+              <p class="section-kicker">About</p>
+              <h2 id="about-title">Useful things that are easy to open, share, and improve.</h2>
+            </div>
+            <div class="about-copy">
+              <p>
+                This site collects my project links, Discord presence, email, and public code in
+                one fast GitHub Pages-friendly place.
+              </p>
+              <p>
+                The style is compact and developer-focused, but tuned for voidultr4: deep navy,
+                cyan glow, pixel edges, and subtle motion without slowing the page down.
+              </p>
+            </div>
+          </div>
         </section>
 
-        <section class="panel" id="projects" aria-labelledby="projects-title">
+        <section class="panel projects-panel" id="projects" aria-labelledby="projects-title">
           <div class="section-heading">
             <div>
-              <p class="section-kicker">Project index</p>
+              <p class="section-kicker">Project Index</p>
               <h2 id="projects-title">Projects</h2>
             </div>
             <label class="search-box">
               <span class="sr-only">Search projects</span>
-              <input id="projectSearch" type="search" placeholder="Search projects" />
+              <input id="projectSearch" type="search" placeholder="Search projects..." autocomplete="off" />
             </label>
           </div>
 
@@ -115,71 +166,11 @@
             <button class="filter" type="button" data-filter="other">Other</button>
           </div>
 
-          <div class="project-grid" id="projectGrid">
-            <article class="project-card feature-project" data-category="web" data-keywords="hatta smart rehabilitation glove lovable healthcare">
-              <a class="project-main-link" href="https://hatta.lovable.app" target="_blank" rel="noreferrer" aria-label="Open HATTA">
-                <span class="project-icon project-icon-image">
-                  <img src="https://hatta.lovable.app/favicon.ico" alt="" />
-                </span>
-                <span class="project-copy">
-                  <span class="project-tag">Web</span>
-                  <span class="project-title">HATTA</span>
-                  <span class="project-description">Smart rehabilitation glove project and product page.</span>
-                </span>
-              </a>
-              <a href="https://hatta.lovable.app" target="_blank" rel="noreferrer">Open</a>
-            </article>
+          <div class="project-grid" id="projectGrid" aria-live="polite"></div>
 
-            <article class="project-card" data-category="web" data-keywords="website portfolio github pages">
-              <a class="project-main-link" href="https://voidultr4.github.io" target="_blank" rel="noreferrer" aria-label="Open Portfolio Site">
-                <span class="project-icon">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 18.5v-13Zm2.5-.7a.7.7 0 0 0-.7.7v2.1h12.4V5.5a.7.7 0 0 0-.7-.7h-11Zm-.7 4.6v9.1c0 .39.31.7.7.7h11c.39 0 .7-.31.7-.7V9.4H5.8Zm2.1 2.2h4.6v1.8H7.9v-1.8Zm0 3.2h8.2v1.8H7.9v-1.8Z" />
-                  </svg>
-                </span>
-                <span class="project-copy">
-                  <span class="project-tag">Web</span>
-                  <span class="project-title">Portfolio Site</span>
-                  <span class="project-description">The main personal website for my projects, links, and contact routes.</span>
-                </span>
-              </a>
-              <a href="https://voidultr4.github.io" target="_blank" rel="noreferrer">Open</a>
-            </article>
-
-            <article class="project-card" data-category="tools" data-keywords="github code repositories projects">
-              <a class="project-main-link" href="https://github.com/voidultr4?tab=repositories" target="_blank" rel="noreferrer" aria-label="Open GitHub Projects">
-                <span class="project-icon github-icon">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.48 11.48 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.49 5.93.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z" />
-                  </svg>
-                </span>
-                <span class="project-copy">
-                  <span class="project-tag">Tools</span>
-                  <span class="project-title">GitHub Projects</span>
-                  <span class="project-description">All public code and project work lives on the voidultr4 GitHub profile.</span>
-                </span>
-              </a>
-              <a href="https://github.com/voidultr4?tab=repositories" target="_blank" rel="noreferrer">Open</a>
-            </article>
-
-            <article class="project-card" data-category="other" data-keywords="more coming soon future">
-              <a class="project-main-link" href="mailto:voidultr4@gmail.com" aria-label="Ask about More Soon">
-                <span class="project-icon dim-icon">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 4a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2h-6v6a1 1 0 1 1-2 0v-6H5a1 1 0 1 1 0-2h6V5a1 1 0 0 1 1-1Z" />
-                  </svg>
-                </span>
-                <span class="project-copy">
-                  <span class="project-tag">Other</span>
-                  <span class="project-title">More Soon</span>
-                  <span class="project-description">A reserved slot for the next project, game, tool, or experiment.</span>
-                </span>
-              </a>
-              <a href="mailto:voidultr4@gmail.com">Ask</a>
-            </article>
-          </div>
-
-          <p class="empty-state" id="emptyState" hidden>No matching projects.</p>
+          <p class="empty-state" id="emptyState" hidden>
+            No projects match that signal. Try a different filter or search term.
+          </p>
         </section>
 
         <section class="panel links-panel" id="contact" aria-labelledby="contact-title">
@@ -188,6 +179,7 @@
               <p class="section-kicker">Contact</p>
               <h2 id="contact-title">Find me here</h2>
             </div>
+            <p class="contact-note">Open for project chats, ideas, and useful experiments.</p>
           </div>
           <div class="link-grid">
             <a class="link-card" href="https://github.com/voidultr4" target="_blank" rel="noreferrer">
@@ -208,6 +200,11 @@
 
       <footer class="site-footer">
         <p>&copy; <span id="year"></span> voidultr4</p>
+        <div class="footer-links" aria-label="Footer socials">
+          <a href="https://github.com/voidultr4" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="mailto:voidultr4@gmail.com">Email</a>
+          <a href="#top">Back to top</a>
+        </div>
       </footer>
     </div>
 
