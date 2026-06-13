@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>voidultr4</title>
+    <meta
+      name="description"
+      content="voidultr4's personal portfolio with projects, GitHub, email, and Discord contact links."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="voidultr4 home">
+          <span class="brand-mark"></span>
+          <span>voidultr4</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#projects">Projects</a>
+          <a href="files.html">Files</a>
+          <a href="#links">Links</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-glow" aria-hidden="true"></div>
+          <p class="console-line">portfolio://voidultr4</p>
+          <h1 id="hero-title">Hey, I'm voidultr4</h1>
+          <p class="hero-subtitle">Developer &bull; Projects &bull; Contact</p>
+          <p class="hero-text">
+            A simple place for my projects and the best ways to reach me.
+          </p>
+          <div class="hero-actions" aria-label="Primary links">
+            <a class="button primary" href="https://github.com/voidultr4" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+            <a class="button" href="files.html">Files</a>
+            <a class="button" href="#contact">Contact</a>
+          </div>
+        </section>
+
+        <section class="panel" id="projects" aria-labelledby="projects-title">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Project index</p>
+              <h2 id="projects-title">Projects</h2>
+            </div>
+            <label class="search-box">
+              <span class="sr-only">Search projects</span>
+              <input id="projectSearch" type="search" placeholder="Search" />
+            </label>
+          </div>
+
+          <div class="filters" aria-label="Project filters">
+            <button class="filter active" type="button" data-filter="all">All</button>
+            <button class="filter" type="button" data-filter="web">Web</button>
+            <button class="filter" type="button" data-filter="tools">Tools</button>
+            <button class="filter" type="button" data-filter="other">Other</button>
+          </div>
+
+          <div class="project-list" id="projectGrid">
+            <article class="project-card" data-category="web" data-keywords="website portfolio github pages">
+              <div>
+                <span class="project-tag">Web</span>
+                <h3>Portfolio Site</h3>
+                <p>The main personal website for projects, links, and contact details.</p>
+              </div>
+              <a href="https://github.com/voidultr4" target="_blank" rel="noreferrer">Open</a>
+            </article>
+
+            <article class="project-card" data-category="tools" data-keywords="github code repositories projects">
+              <div>
+                <span class="project-tag">Tools</span>
+                <h3>GitHub Projects</h3>
+                <p>All public code and project work lives on the voidultr4 GitHub profile.</p>
+              </div>
+              <a href="https://github.com/voidultr4?tab=repositories" target="_blank" rel="noreferrer">Open</a>
+            </article>
+
+            <article class="project-card" data-category="web" data-keywords="hatta smart rehabilitation glove lovable healthcare">
+              <div>
+                <span class="project-tag">Web</span>
+                <h3>HATTA</h3>
+                <p>Smart rehabilitation glove project and product page.</p>
+              </div>
+              <a href="https://hatta.lovable.app" target="_blank" rel="noreferrer">Open</a>
+            </article>
+
+            <article class="project-card" data-category="other" data-keywords="more coming soon future">
+              <div>
+                <span class="project-tag">Other</span>
+                <h3>More Soon</h3>
+                <p>A reserved slot for the next project, game, tool, or experiment.</p>
+              </div>
+              <a href="mailto:voidultr4@gmail.com">Ask</a>
+            </article>
+          </div>
+
+          <p class="empty-state" id="emptyState" hidden>No matching projects.</p>
+        </section>
+
+        <section class="panel links-panel" id="links" aria-labelledby="links-title">
+          <p class="section-kicker">Quick access</p>
+          <h2 id="links-title">Links</h2>
+          <div class="link-grid">
+            <a class="link-card" href="https://github.com/voidultr4" target="_blank" rel="noreferrer">
+              <span>GitHub</span>
+              github.com/voidultr4
+            </a>
+            <a class="link-card" href="mailto:voidultr4@gmail.com">
+              <span>Email</span>
+              voidultr4@gmail.com
+            </a>
+            <a class="link-card" href="#contact">
+              <span>Discord</span>
+              @fakesanta
+            </a>
+          </div>
+        </section>
+
+        <section class="panel contact-panel" id="contact" aria-labelledby="contact-title">
+          <p class="section-kicker">Contact</p>
+          <h2 id="contact-title">Reach me here</h2>
+          <div class="contact-list">
+            <a href="mailto:voidultr4@gmail.com">
+              <span>Email</span>
+              voidultr4@gmail.com
+            </a>
+            <a href="https://github.com/voidultr4" target="_blank" rel="noreferrer">
+              <span>GitHub</span>
+              github.com/voidultr4
+            </a>
+            <p>
+              <span>Discord</span>
+              @fakesanta
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>&copy; <span id="year"></span> voidultr4</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
