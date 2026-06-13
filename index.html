@@ -6,12 +6,12 @@
     <title>voidultr4</title>
     <meta
       name="description"
-      content="voidultr4's personal portfolio with projects, GitHub, email, and Discord contact links."
+      content="voidultr4's portfolio, projects, live Discord card, and contact links."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -24,29 +24,76 @@
           <span>voidultr4</span>
         </a>
         <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#about">About</a>
           <a href="#projects">Projects</a>
-          <a href="files.html">Files</a>
-          <a href="#links">Links</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
 
       <main id="top">
-        <section class="hero" aria-labelledby="hero-title">
-          <div class="hero-glow" aria-hidden="true"></div>
-          <p class="console-line">portfolio://voidultr4</p>
-          <h1 id="hero-title">Hey, I'm voidultr4</h1>
-          <p class="hero-subtitle">Developer &bull; Projects &bull; Contact</p>
-          <p class="hero-text">
-            A simple place for my projects and the best ways to reach me.
-          </p>
-          <div class="hero-actions" aria-label="Primary links">
-            <a class="button primary" href="https://github.com/voidultr4" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-            <a class="button" href="files.html">Files</a>
-            <a class="button" href="#contact">Contact</a>
+        <section class="profile-hero" aria-labelledby="hero-title">
+          <div class="profile-card">
+            <div class="avatar-ring">
+              <img src="https://github.com/voidultr4.png" alt="voidultr4 GitHub avatar" />
+            </div>
+            <p class="console-line">void://portfolio</p>
+            <h1 id="hero-title">Hi, I'm voidultr4.</h1>
+            <p class="hero-subtitle">developer • maker • project builder</p>
+            <p class="hero-text">
+              I build web projects, experiments, and tools. This is my hub for projects,
+              links, contact, and live Discord presence.
+            </p>
+            <div class="hero-actions" aria-label="Main actions">
+              <a class="button primary" href="https://github.com/voidultr4" target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+              <a class="button" href="#discord">Discord</a>
+              <a class="button" href="#contact">Contact</a>
+            </div>
           </div>
+
+          <aside class="discord-card" id="discord" aria-labelledby="discord-title">
+            <div class="discord-avatar-wrap">
+              <img id="discordAvatar" src="https://github.com/voidultr4.png" alt="Discord avatar" />
+              <span class="presence-dot offline" id="presenceDot"></span>
+            </div>
+            <div class="discord-info">
+              <p class="section-kicker">Live Discord API</p>
+              <h2 id="discord-title">voidultr4</h2>
+              <dl class="discord-fields">
+                <div>
+                  <dt>username:</dt>
+                  <dd id="discordUsername">@fakesanta</dd>
+                </div>
+                <div>
+                  <dt>status:</dt>
+                  <dd id="discordStatus">add your Discord user ID</dd>
+                </div>
+                <div>
+                  <dt>activity:</dt>
+                  <dd id="discordActivity">waiting for setup</dd>
+                </div>
+                <div>
+                  <dt>updated:</dt>
+                  <dd id="discordUpdated">not connected yet</dd>
+                </div>
+                <div>
+                  <dt>Local time:</dt>
+                  <dd id="localTime">--:--</dd>
+                </div>
+              </dl>
+            </div>
+          </aside>
+        </section>
+
+        <section class="panel about-panel" id="about" aria-labelledby="about-title">
+          <p class="section-kicker">About</p>
+          <h2 id="about-title">I like making useful things that are easy to open and share.</h2>
+          <p>
+            This site is for my portfolio, project links, Discord, email, and a browser-based
+            live Discord presence card. The theme is inspired by compact developer portfolios, but tuned
+            with my own darker void-blue style.
+          </p>
         </section>
 
         <section class="panel" id="projects" aria-labelledby="projects-title">
@@ -57,7 +104,7 @@
             </div>
             <label class="search-box">
               <span class="sr-only">Search projects</span>
-              <input id="projectSearch" type="search" placeholder="Search" />
+              <input id="projectSearch" type="search" placeholder="Search projects" />
             </label>
           </div>
 
@@ -68,40 +115,66 @@
             <button class="filter" type="button" data-filter="other">Other</button>
           </div>
 
-          <div class="project-list" id="projectGrid">
-            <article class="project-card" data-category="web" data-keywords="website portfolio github pages">
-              <div>
-                <span class="project-tag">Web</span>
-                <h3>Portfolio Site</h3>
-                <p>The main personal website for projects, links, and contact details.</p>
-              </div>
-              <a href="https://github.com/voidultr4" target="_blank" rel="noreferrer">Open</a>
-            </article>
-
-            <article class="project-card" data-category="tools" data-keywords="github code repositories projects">
-              <div>
-                <span class="project-tag">Tools</span>
-                <h3>GitHub Projects</h3>
-                <p>All public code and project work lives on the voidultr4 GitHub profile.</p>
-              </div>
-              <a href="https://github.com/voidultr4?tab=repositories" target="_blank" rel="noreferrer">Open</a>
-            </article>
-
-            <article class="project-card" data-category="web" data-keywords="hatta smart rehabilitation glove lovable healthcare">
-              <div>
-                <span class="project-tag">Web</span>
-                <h3>HATTA</h3>
-                <p>Smart rehabilitation glove project and product page.</p>
-              </div>
+          <div class="project-grid" id="projectGrid">
+            <article class="project-card feature-project" data-category="web" data-keywords="hatta smart rehabilitation glove lovable healthcare">
+              <a class="project-main-link" href="https://hatta.lovable.app" target="_blank" rel="noreferrer" aria-label="Open HATTA">
+                <span class="project-icon project-icon-image">
+                  <img src="https://hatta.lovable.app/favicon.ico" alt="" />
+                </span>
+                <span class="project-copy">
+                  <span class="project-tag">Web</span>
+                  <span class="project-title">HATTA</span>
+                  <span class="project-description">Smart rehabilitation glove project and product page.</span>
+                </span>
+              </a>
               <a href="https://hatta.lovable.app" target="_blank" rel="noreferrer">Open</a>
             </article>
 
+            <article class="project-card" data-category="web" data-keywords="website portfolio github pages">
+              <a class="project-main-link" href="https://voidultr4.github.io" target="_blank" rel="noreferrer" aria-label="Open Portfolio Site">
+                <span class="project-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 18.5v-13Zm2.5-.7a.7.7 0 0 0-.7.7v2.1h12.4V5.5a.7.7 0 0 0-.7-.7h-11Zm-.7 4.6v9.1c0 .39.31.7.7.7h11c.39 0 .7-.31.7-.7V9.4H5.8Zm2.1 2.2h4.6v1.8H7.9v-1.8Zm0 3.2h8.2v1.8H7.9v-1.8Z" />
+                  </svg>
+                </span>
+                <span class="project-copy">
+                  <span class="project-tag">Web</span>
+                  <span class="project-title">Portfolio Site</span>
+                  <span class="project-description">The main personal website for my projects, links, and contact routes.</span>
+                </span>
+              </a>
+              <a href="https://voidultr4.github.io" target="_blank" rel="noreferrer">Open</a>
+            </article>
+
+            <article class="project-card" data-category="tools" data-keywords="github code repositories projects">
+              <a class="project-main-link" href="https://github.com/voidultr4?tab=repositories" target="_blank" rel="noreferrer" aria-label="Open GitHub Projects">
+                <span class="project-icon github-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.48 11.48 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.49 5.93.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z" />
+                  </svg>
+                </span>
+                <span class="project-copy">
+                  <span class="project-tag">Tools</span>
+                  <span class="project-title">GitHub Projects</span>
+                  <span class="project-description">All public code and project work lives on the voidultr4 GitHub profile.</span>
+                </span>
+              </a>
+              <a href="https://github.com/voidultr4?tab=repositories" target="_blank" rel="noreferrer">Open</a>
+            </article>
+
             <article class="project-card" data-category="other" data-keywords="more coming soon future">
-              <div>
-                <span class="project-tag">Other</span>
-                <h3>More Soon</h3>
-                <p>A reserved slot for the next project, game, tool, or experiment.</p>
-              </div>
+              <a class="project-main-link" href="mailto:voidultr4@gmail.com" aria-label="Ask about More Soon">
+                <span class="project-icon dim-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 4a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2h-6v6a1 1 0 1 1-2 0v-6H5a1 1 0 1 1 0-2h6V5a1 1 0 0 1 1-1Z" />
+                  </svg>
+                </span>
+                <span class="project-copy">
+                  <span class="project-tag">Other</span>
+                  <span class="project-title">More Soon</span>
+                  <span class="project-description">A reserved slot for the next project, game, tool, or experiment.</span>
+                </span>
+              </a>
               <a href="mailto:voidultr4@gmail.com">Ask</a>
             </article>
           </div>
@@ -109,9 +182,13 @@
           <p class="empty-state" id="emptyState" hidden>No matching projects.</p>
         </section>
 
-        <section class="panel links-panel" id="links" aria-labelledby="links-title">
-          <p class="section-kicker">Quick access</p>
-          <h2 id="links-title">Links</h2>
+        <section class="panel links-panel" id="contact" aria-labelledby="contact-title">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Contact</p>
+              <h2 id="contact-title">Find me here</h2>
+            </div>
+          </div>
           <div class="link-grid">
             <a class="link-card" href="https://github.com/voidultr4" target="_blank" rel="noreferrer">
               <span>GitHub</span>
@@ -121,29 +198,10 @@
               <span>Email</span>
               voidultr4@gmail.com
             </a>
-            <a class="link-card" href="#contact">
+            <div class="link-card">
               <span>Discord</span>
               @fakesanta
-            </a>
-          </div>
-        </section>
-
-        <section class="panel contact-panel" id="contact" aria-labelledby="contact-title">
-          <p class="section-kicker">Contact</p>
-          <h2 id="contact-title">Reach me here</h2>
-          <div class="contact-list">
-            <a href="mailto:voidultr4@gmail.com">
-              <span>Email</span>
-              voidultr4@gmail.com
-            </a>
-            <a href="https://github.com/voidultr4" target="_blank" rel="noreferrer">
-              <span>GitHub</span>
-              github.com/voidultr4
-            </a>
-            <p>
-              <span>Discord</span>
-              @fakesanta
-            </p>
+            </div>
           </div>
         </section>
       </main>
