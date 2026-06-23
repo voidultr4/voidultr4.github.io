@@ -217,7 +217,7 @@ button {
 .project-tag,
 .section-kicker,
 .console-line,
-.link-card span,
+.link-label,
 .filter-count {
   color: var(--accent);
   font-family: var(--mono);
@@ -762,15 +762,60 @@ h2 {
 
 .link-card {
   display: grid;
-  gap: 7px;
+  gap: 14px;
   min-height: 108px;
   padding: 18px;
+}
+
+.link-card-top {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.link-icon {
+  align-items: center;
+  background:
+    linear-gradient(var(--panel-strong), var(--panel-strong)) padding-box,
+    linear-gradient(135deg, rgba(94, 231, 255, 0.72), rgba(68, 125, 255, 0.5)) border-box;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: var(--accent);
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 34px;
+  justify-content: center;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  width: 34px;
+}
+
+.link-icon svg {
+  fill: currentColor;
+  height: 19px;
+  width: 19px;
+}
+
+.link-icon-text {
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.link-text {
+  color: var(--soft);
+  overflow-wrap: anywhere;
 }
 
 .link-card:hover {
   border-color: rgba(94, 231, 255, 0.32);
   color: var(--accent);
   transform: translateY(-3px);
+}
+
+.link-card:hover .link-icon {
+  box-shadow: 0 0 22px rgba(94, 231, 255, 0.22);
+  transform: translateY(-2px) rotate(-2deg);
 }
 
 .empty-state {
