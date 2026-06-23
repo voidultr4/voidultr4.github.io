@@ -65,9 +65,14 @@ const discordUpdated = document.querySelector("#discordUpdated");
 const localTime = document.querySelector("#localTime");
 const presenceDot = document.querySelector("#presenceDot");
 const syncState = document.querySelector("#syncState");
+const exitModal = document.querySelector("#exitModal");
+const exitDestination = document.querySelector("#exitDestination");
+const exitContinue = document.querySelector("#exitContinue");
+const exitCancelButtons = document.querySelectorAll("[data-exit-cancel]");
 
 const DISCORD_USER_ID = "1375722019039084554";
 let activeFilter = "all";
+let lastFocusedLink = null;
 
 function iconMarkup(project) {
   if (project.icon) {
@@ -158,6 +163,53 @@ navLinks.addEventListener("click", (event) => {
   if (event.target.tagName === "A") {
     navLinks.classList.remove("open");
     navToggle.setAttribute("aria-expanded", "false");
+  }
+});
+
+function isExternalHttpLink(link) {
+  if (!link || !link.href) return false;
+  const url = new URL(link.href, window.location.href);
+  return ["http:", "https:"].includes(url.protocol) && url.origin !== window.location.origin;
+}
+
+function openExitModal(link) {
+  const url = new URL(link.href, window.location.href);
+  lastFocusedLink = link;
+  exitDestination.textContent = url.hostname.replace(/^www\./, "");
+  exitContinue.href = link.href;
+  exitContinue.target = link.target || "_self";
+  exitContinue.rel = link.rel || "noreferrer";
+  exitModal.hidden = false;
+  document.body.classList.add("modal-open");
+  exitContinue.focus();
+}
+
+function closeExitModal() {
+  exitModal.hidden = true;
+  document.body.classList.remove("modal-open");
+  if (lastFocusedLink) lastFocusedLink.focus();
+}
+
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("a");
+  if (!isExternalHttpLink(link) || link === exitContinue) return;
+
+  event.preventDefault();
+  openExitModal(link);
+});
+
+exitCancelButtons.forEach((button) => {
+  button.addEventListener("click", closeExitModal);
+});
+
+exitContinue.addEventListener("click", () => {
+  exitModal.hidden = true;
+  document.body.classList.remove("modal-open");
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !exitModal.hidden) {
+    closeExitModal();
   }
 });
 

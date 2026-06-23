@@ -7,7 +7,6 @@ A fast, GitHub Pages-friendly portfolio for `voidultr4`, built with plain HTML, 
 - `index.html` controls the page structure and main content sections.
 - `styles.css` contains the dark void-blue visual system, responsive layout, and animations.
 - `script.js` contains editable project data, project search/filter behavior, the mobile navbar, and the live Discord widget.
-- `icon.svg` is the browser tab/app icon.
 
 ## Customize
 
