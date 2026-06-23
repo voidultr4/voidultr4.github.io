@@ -37,7 +37,7 @@ To use a different account, replace that value in `script.js` with the numeric D
 
 ### Contact Links
 
-Edit the GitHub, email, and Discord text in `index.html` under the Contact section and footer.
+Edit the GitHub, email, Discord, guns.lol, Instagram, and YouTube links in `index.html` under the Contact section and footer.
 
 ## Local Preview
 
